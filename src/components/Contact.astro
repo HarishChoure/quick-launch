@@ -1,0 +1,82 @@
+---
+// Contact section component
+---
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 px-4 bg-black">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Let's Build Together</h2>
+            <p class="text-xl md:text-2xl text-gray-300">Tell us about your project and we'll get back to you within 2 hours</p>
+        </div>
+
+        <div class="card bg-dark-custom border border-custom rounded-3xl p-10 shadow-2xl">
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Full Name *</label>
+                        <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                    </div>
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Email Address *</label>
+                        <input type="email" placeholder="john@example.com" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-3 font-semibold text-lg">Phone Number</label>
+                    <input type="tel" placeholder="+91 98765 43210" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
+                </div>
+                <div>
+                    <label class="block mb-3 font-semibold text-lg">Project Type *</label>
+                    <select class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                        <option value="">Select a service</option>
+                        <option value="static-mvp">Static MVP (1 Week)</option>
+                        <option value="full-mvp">Full MVP (1 Month)</option>
+                        <option value="hire-developer">Hire Developer</option>
+                        <option value="hire-designer">Hire Designer</option>
+                        <option value="seo-marketing">SEO & Marketing</option>
+                        <option value="custom">Custom Project</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-3 font-semibold text-lg">Project Details *</label>
+                    <textarea rows="6" placeholder="Tell us about your project, goals, and timeline..." class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition resize-none" required></textarea>
+                </div>
+                <div>
+                    <label class="block mb-3 font-semibold text-lg">Budget Range</label>
+                    <select class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
+                        <option value="">Select budget range</option>
+                        <option value="under-50k">Under ₹50,000</option>
+                        <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+                        <option value="1l-3l">₹1,00,000 - ₹3,00,000</option>
+                        <option value="3l-5l">₹3,00,000 - ₹5,00,000</option>
+                        <option value="above-5l">Above ₹5,00,000</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button w-full bg-white text-black py-5 rounded-xl text-xl font-bold hover:bg-gray-200">
+                    🚀 Send Message & Get Quote
+                </button>
+                <p class="text-center text-gray-300 text-sm">We respond within 2 hours • Your information is 100% secure</p>
+            </form>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-4xl mb-3">📧</div>
+                <h4 class="font-bold mb-2">Email Us</h4>
+                <p class="text-gray-300">hello@Quick Launch.com</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-3">📱</div>
+                <h4 class="font-bold mb-2">Call/WhatsApp</h4>
+                <p class="text-gray-300">+91 98765 43210</p>
+            </div>
+            <div>
+                <div class="text-4xl mb-3">🌍</div>
+                <h4 class="font-bold mb-2">Location</h4>
+                <p class="text-gray-300">India • Remote Friendly</p>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Quick Launch - Creative Design Agency | Empowering Brands Through Creative Solutions",
+  description = "Quick Launch - Empowering brands through creative solutions. Professional website development, UI/UX design, branding, and digital marketing services."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="website development, UI UX design, branding, digital marketing, creative agency, web design, mobile apps, e-commerce solutions" />
+    <meta name="author" content="Quick Launch" />
+    <meta property="og:title" content="Quick Launch - Creative Design Agency" />
+    <meta property="og:description" content="Empowering brands through creative solutions. From web development to branding, we deliver innovative strategies that elevate your brand." />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://Quick Launch.com" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-black text-white">
+    <slot />
+    <script>
+      import '../scripts/main.ts';
+    </script>
+  </body>
+</html>
+

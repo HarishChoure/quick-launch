@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quick Launch - Empowering brands through creative solutions. Professional website development, UI/UX design, branding, and digital marketing services.">
+    <meta name="keywords" content="website development, UI UX design, branding, digital marketing, creative agency, web design, mobile apps, e-commerce solutions">
+    <meta name="author" content="Quick Launch">
+    <meta property="og:title" content="Quick Launch - Creative Design Agency">
+    <meta property="og:description" content="Empowering brands through creative solutions. From web development to branding, we deliver innovative strategies that elevate your brand.">
+    <meta property="og:type" content="website">
+    <title>Quick Launch - Creative Design Agency | Empowering Brands Through Creative Solutions</title>
+    <link rel="canonical" href="https://Quick Launch.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lime-green: #E50914;
+            --lime-green-dark: #32e60d;
+            --dark-bg: #271111;
+            --border-color: #7d7d7d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        nav {
+            background: #000000;
+            border-bottom: 1px solid #333333;
+        }
+
+        .starburst {
+            color: var(--lime-green);
+            font-size: 2rem;
+            display: inline-block;
+        }
+
+        .hand-drawn-arrow {
+            position: relative;
+            width: 200px;
+            height: 100px;
+        }
+
+        .hand-drawn-arrow::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 2px;
+            background: var(--lime-green);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .hand-drawn-arrow::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 15px solid var(--lime-green);
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lime-accent {
+            color: var(--lime-green);
+        }
+
+        .lime-bg {
+            background-color: var(--lime-green);
+            color: #000000;
+        }
+
+        .lime-border {
+            border-color: var(--lime-green);
+        }
+
+        .bg-dark-custom {
+            background-color: var(--dark-bg);
+        }
+
+        .border-custom {
+            border-color: var(--border-color);
+        }
+
+        /* Button Styles - Cursor Pointer and Hover Effects */
+        button, .btn, a[role="button"], 
+        a.bg-\[#E50914\], a.bg-transparent,
+        .industry-card, .cursor-pointer {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover, .btn:hover, 
+        a.bg-\[#E50914\]:hover, a.bg-transparent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+        }
+
+        button:active, .btn:active,
+        a.bg-\[#E50914\]:active, a.bg-transparent:active {
+            transform: translateY(0);
+        }
+
+        /* Specific hover effects for different button types */
+        .bg-\[#E50914\]:hover {
+            background-color: #c40812 !important;
+        }
+
+        .border-2.border-white:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .bg-white.text-black:hover {
+            background-color: #e5e5e5 !important;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Reduce font sizes for mobile */
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
+
+            h3 {
+                font-size: 1.5rem !important;
+            }
+
+            h4 {
+                font-size: 1.25rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+
+            .text-5xl {
+                font-size: 2rem !important;
+            }
+
+            .text-6xl {
+                font-size: 2.5rem !important;
+            }
+
+            .text-7xl {
+                font-size: 3rem !important;
+            }
+
+            .text-xl {
+                font-size: 1rem !important;
+            }
+
+            .text-2xl {
+                font-size: 1.25rem !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            /* Reduce padding on mobile */
+            .py-20 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+            .py-24 {
+                padding-top: 3.5rem !important;
+                padding-bottom: 3.5rem !important;
+            }
+
+            .px-4 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            /* Adjust spacing */
+            .mb-16 {
+                margin-bottom: 2rem !important;
+            }
+
+            .mb-12 {
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Modal adjustments for mobile */
+            .modal-content {
+                padding: 1.5rem !important;
+                max-width: 95% !important;
+                margin: 1rem !important;
+            }
+
+            .modal-content h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Navigation adjustments */
+            nav {
+                padding: 0.5rem 0 !important;
+            }
+
+            nav h1 {
+                font-size: 1.25rem !important;
+            }
+
+            /* Grid adjustments */
+            .grid {
+                gap: 1rem !important;
+            }
+
+            /* Button text size on mobile - Better touch targets */
+            button {
+                font-size: 0.875rem !important;
+                padding: 0.75rem 1rem !important;
+                min-height: 44px !important; /* Better touch target */
+                touch-action: manipulation !important; /* Prevent double-tap zoom */
+            }
+
+            /* Better button spacing in cards */
+            .industry-card button,
+            article button {
+                width: 100% !important;
+                min-height: 44px !important;
+            }
+
+            button.text-lg {
+                font-size: 1rem !important;
+            }
+
+            button.text-xl {
+                font-size: 1rem !important;
+            }
+
+            /* Statistics section */
+            .text-4xl.md\:text-5xl {
+                font-size: 1.5rem !important;
+            }
+
+            /* Industry cards - Better mobile UI */
+            .industry-card {
+                padding: 1.25rem 0.75rem !important;
+                min-height: 180px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+
+            .industry-card .text-5xl {
+                font-size: 2.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .industry-card h3 {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+                line-height: 1.3 !important;
+            }
+
+            .industry-card p {
+                font-size: 0.7rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 0.75rem !important;
+                flex-grow: 1 !important;
+            }
+
+            .industry-card button {
+                font-size: 0.8rem !important;
+                padding: 0.625rem 0.75rem !important;
+                min-height: 36px !important;
+                margin-top: auto !important;
+            }
+
+            /* Industry grid on mobile */
+            .grid.grid-cols-2.md\:grid-cols-4 {
+                gap: 0.75rem !important;
+            }
+
+            /* Form inputs on mobile */
+            input, textarea, select {
+                font-size: 1rem !important;
+                padding: 0.75rem !important;
+            }
+
+            /* Card padding adjustments */
+            .p-8 {
+                padding: 1.5rem !important;
+            }
+
+            .p-6 {
+                padding: 1rem !important;
+            }
+
+            .p-10 {
+                padding: 1.5rem !important;
+            }
+
+            /* Gap adjustments */
+            .gap-8 {
+                gap: 1.5rem !important;
+            }
+
+            .gap-6 {
+                gap: 1rem !important;
+            }
+
+            .gap-4 {
+                gap: 0.75rem !important;
+            }
+
+            /* Section spacing improvements */
+            section {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            /* Hero section improvements */
+            .pt-32 {
+                padding-top: 5rem !important;
+            }
+
+            /* Better text readability */
+            p, span, li {
+                line-height: 1.6 !important;
+            }
+
+            /* Pricing cards mobile */
+            article.p-8 {
+                padding: 1.25rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Statistics grid mobile */
+            .grid.grid-cols-2.md\:grid-cols-4 {
+                gap: 0.75rem !important;
+            }
+
+            .grid.grid-cols-2.md\:grid-cols-4 > div {
+                padding: 0.75rem !important;
+            }
+
+            /* Services list mobile */
+            .space-y-4 > div {
+                padding: 1rem !important;
+            }
+
+            /* Contact form mobile */
+            .card.bg-dark-custom {
+                padding: 1.25rem !important;
+            }
+
+            /* Footer mobile */
+            .grid.md\:grid-cols-4 {
+                gap: 2rem !important;
+            }
+
+            /* Better spacing for headings */
+            .mb-4 {
+                margin-bottom: 1rem !important;
+            }
+
+            .mb-6 {
+                margin-bottom: 1.25rem !important;
+            }
+
+            /* Badge adjustments */
+            .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .py-3 {
+                padding-top: 0.625rem !important;
+                padding-bottom: 0.625rem !important;
+            }
+
+            /* CTA buttons mobile */
+            .flex.flex-col.sm\:flex-row {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            .flex.flex-col.sm\:flex-row > a,
+            .flex.flex-col.sm\:flex-row > button {
+                width: 100% !important;
+                text-align: center !important;
+            }
+
+            /* Section headings mobile */
+            #industries h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+                padding: 0 0.5rem !important;
+            }
+
+            #industries p {
+                font-size: 0.875rem !important;
+                padding: 0 0.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Better container padding */
+            .max-w-7xl {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+
+            /* Prevent horizontal scroll */
+            body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+
+            /* Better rounded corners on mobile */
+            .rounded-xl {
+                border-radius: 0.75rem !important;
+            }
+
+            .rounded-3xl {
+                border-radius: 1rem !important;
+            }
+
+            /* Improve card borders on mobile */
+            .border {
+                border-width: 1px !important;
+            }
+
+            .border-2 {
+                border-width: 1.5px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            /* Extra small devices */
+            h1 {
+                font-size: 1.75rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .text-7xl {
+                font-size: 2.5rem !important;
+            }
+
+            .text-6xl {
+                font-size: 2rem !important;
+            }
+
+            .text-5xl {
+                font-size: 1.75rem !important;
+            }
+
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+
+            .py-20 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .py-24 {
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
+            }
+
+            .pt-32 {
+                padding-top: 5rem !important;
+            }
+
+            /* Hero section mobile adjustments */
+            .mb-16 {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .mb-12 {
+                margin-bottom: 1rem !important;
+            }
+
+            /* Industry cards extra small */
+            .industry-card {
+                padding: 1rem 0.625rem !important;
+                min-height: 170px !important;
+            }
+
+            .industry-card .text-5xl {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .industry-card h3 {
+                font-size: 0.9375rem !important;
+            }
+
+            .industry-card p {
+                font-size: 0.65rem !important;
+                margin-bottom: 0.625rem !important;
+            }
+
+            .industry-card button {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.625rem !important;
+            }
+
+            /* Better grid spacing on extra small */
+            .grid.grid-cols-2 {
+                gap: 0.625rem !important;
+            }
+
+            /* Navigation mobile */
+            nav .h-16 {
+                height: 3.5rem !important;
+            }
+
+            /* Better text wrapping */
+            h1, h2, h3 {
+                word-wrap: break-word !important;
+                hyphens: auto !important;
+            }
+
+            /* Improve button readability */
+            button, a.bg-\[#E50914\] {
+                font-weight: 600 !important;
+                letter-spacing: 0.025em !important;
+            }
+
+            .mb-8 {
+                margin-bottom: 1rem !important;
+            }
+
+            .mb-6 {
+                margin-bottom: 1rem !important;
+            }
+
+            /* Statistics grid on mobile */
+            .grid.grid-cols-2 {
+                gap: 0.75rem !important;
+            }
+
+            /* Industry cards grid */
+            .grid.grid-cols-2.md\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Pricing cards */
+            .grid.md\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Contact form */
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Footer grid */
+            .grid.md\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Badge text size */
+            .text-base.md\:text-lg {
+                font-size: 0.875rem !important;
+            }
+
+            /* Leading adjustments */
+            .leading-tight {
+                line-height: 1.2 !important;
+            }
+
+            .leading-relaxed {
+                line-height: 1.5 !important;
+            }
+        }
+
+        /* Ensure all clickable elements have pointer cursor */
+        a, button, .cursor-pointer, .industry-card, 
+        input[type="submit"], .modal-close,
+        a[href], a[href^="#"] {
+            cursor: pointer !important;
+        }
+
+        /* Hover effects for navigation links */
+        nav a:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--dark-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .modal-close:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .modal-close {
+                top: 0.75rem;
+                right: 0.75rem;
+                width: 35px;
+                height: 35px;
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 bg-black border-b border-custom">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <span class="starburst">⭐</span>
+                        <h1 class="text-2xl font-semibold text-white">Quick Launch</h1>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="#industries" class="text-white font-semibold hover:text-[#E50914] transition">Quick Launch</a>
+                        <a href="#pricing" class="text-white hover:text-white transition">Pricing</a>
+                        <a href="#hire" class="text-white hover:text-white transition">Hire Team</a>
+                        <a href="#services" class="text-white hover:text-white transition">Services</a>
+                        <a href="#testimonials" class="text-white hover:text-white transition">Reviews</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden md:flex items-center gap-4">
+                        <a href="#contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812]">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-custom mt-4">
+                <div class="flex flex-col gap-4 pt-4">
+                    <a href="#industries" class="text-white font-semibold hover:text-[#E50914] transition">Quick Launch</a>
+                    <a href="#pricing" class="text-white hover:text-white transition">Pricing</a>
+                    <a href="#hire" class="text-white hover:text-white transition">Hire Team</a>
+                    <a href="#services" class="text-white hover:text-white transition">Services</a>
+                    <a href="#testimonials" class="text-white hover:text-white transition">Reviews</a>
+                    <a href="#contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812] text-center">Contact</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Quick Launch USP -->
+    <section class="pt-32 pb-20 px-4 bg-black relative overflow-hidden">
+        <!-- Background accent -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#E50914] opacity-5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <!-- 24-Hour Delivery Badge -->
+                <div class="inline-block mb-8">
+                    <span class="bg-[#E50914] text-white px-8 py-3 rounded-full text-base md:text-lg font-black">
+                        ⚡ Delivered in 24 Hours
+                    </span>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                    10,000+ Professional Websites<br/>
+                    <span class="text-white">Delivered in 24 Hours</span>
+                </h1>
+                
+                <!-- Subheading -->
+                <p class="text-lg md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Get your industry-specific website for <span class="text-white font-bold">₹8,300. Forever.</span><br/>
+                    One-time payment includes lifetime hosting, SEO optimization, and annual updates.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#industries" class="bg-[#E50914] text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#c40812] transition">
+                        Choose Your Industry Template
+                    </a>
+                    <a href="#pricing" class="bg-transparent text-white px-8 py-4 rounded-lg text-lg font-bold border-2 border-white hover:bg-white hover:text-[#E50914] transition">
+                        See Pricing
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto mt-16 pt-16 border-t border-custom">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">10,000+</div>
+                    <div class="text-gray-400 text-sm md:text-base">Websites Delivered</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">24hrs</div>
+                    <div class="text-gray-400 text-sm md:text-base">Delivery Time</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">₹8,300</div>
+                    <div class="text-gray-400 text-sm md:text-base">One-Time Forever</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">100%</div>
+                    <div class="text-gray-400 text-sm md:text-base">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Templates Section -->
+    <section id="industries" class="py-20 px-4 bg-dark-custom">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Websites Designed for Your Industry</h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Browse our collection of professional templates tailored for specific business types. Each can be customized to match your brand.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- HVAC -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="HVAC">
+                    <div class="text-5xl mb-4 text-center">❄️</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">HVAC</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Heating, cooling & air quality services</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Plumbing -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Plumbing">
+                    <div class="text-5xl mb-4 text-center">🔧</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Plumbing</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Residential & commercial plumbing</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Law Firm -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Law Firm">
+                    <div class="text-5xl mb-4 text-center">⚖️</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Law Firm</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Legal services & attorney practices</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Lawn Care -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Lawn Care">
+                    <div class="text-5xl mb-4 text-center">🌿</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Lawn Care</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Landscaping & lawn maintenance</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Dental -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Dental">
+                    <div class="text-5xl mb-4 text-center">🦷</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Dental</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Dental practices & clinics</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Restaurant -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Restaurant">
+                    <div class="text-5xl mb-4 text-center">🍽️</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Restaurant</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Restaurants, cafes & eateries</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Auto Repair -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Auto Repair">
+                    <div class="text-5xl mb-4 text-center">🚗</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Auto Repair</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Auto mechanics & body shops</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Salon & Spa -->
+                <div class="bg-black border border-custom rounded-xl p-6 hover:border-white transition cursor-pointer group industry-card" data-category="Salon & Spa">
+                    <div class="text-5xl mb-4 text-center">💇</div>
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Salon & Spa</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">Hair salons, spas & beauty</p>
+                    <button class="w-full bg-[#E50914] text-white py-2 rounded-lg font-semibold hover:bg-[#c40812] transition text-sm">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unified Pricing Section -->
+    <section id="pricing" class="py-20 px-4 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white">Choose Your Perfect Plan</h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">All plans include lifetime hosting. No hidden fees. Cancel anytime.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Quick Launch Plan -->
+                <article class="p-8 bg-dark-custom border-2 border-white rounded-3xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#E50914] text-white px-6 py-2 rounded-full text-xs font-black">
+                        ⚡ 24 HOURS
+                    </div>
+                    
+                    <div class="text-center mb-6 pt-4">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Quick Launch</h3>
+                        <p class="text-gray-400 text-sm">Perfect for rapid deployment</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="text-4xl md:text-5xl font-black text-white mb-2">₹8,300</div>
+                        <p class="text-gray-400 text-sm">one-time payment</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Industry-specific design</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">SEO optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">12 content updates/year</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Monthly reports</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">SSL certificate</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Lifetime hosting</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Free subdomain</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-[#E50914] text-white py-3 rounded-xl font-bold hover:bg-[#c40812] transition mb-3">
+                        Get Started Now
+                    </button>
+                    <button class="w-full border-2 border-white text-white py-3 rounded-xl font-bold hover:bg-white hover:text-[#E50914] transition">
+                        📱 Contact Us
+                    </button>
+                </article>
+
+                <!-- Static MVP Plan -->
+                <article class="p-8 bg-dark-custom border border-custom rounded-3xl">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Static MVP</h3>
+                        <p class="text-gray-400 text-sm">For validation & early traction</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="text-4xl md:text-5xl font-black text-white mb-2">Custom</div>
+                        <p class="text-gray-400 text-sm">Delivered in 1 week</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300"><strong>All Quick Launch features</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Custom design</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Advanced SEO</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Contact form integration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Modern UI/UX design</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Lightning-fast loading</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Fully responsive</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-white text-black py-3 rounded-xl font-bold hover:bg-gray-200 transition mb-3">
+                        📱 Contact on WhatsApp
+                    </button>
+                    <button class="w-full border-2 border-white text-white py-3 rounded-xl font-bold hover:bg-white hover:text-[#E50914] transition">
+                        📧 Send Email
+                    </button>
+                </article>
+
+                <!-- Full MVP Plan -->
+                <article class="p-8 bg-dark-custom border-2 border-white rounded-3xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#E50914] text-white px-6 py-2 rounded-full text-xs font-black">
+                        ⭐ MOST POPULAR
+                    </div>
+                    
+                    <div class="text-center mb-6 pt-4">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Full MVP</h3>
+                        <p class="text-gray-400 text-sm">Complete solution with backend</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="text-4xl md:text-5xl font-black text-white mb-2">Custom</div>
+                        <p class="text-gray-400 text-sm">Delivered in 1 month</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300"><strong>All Static MVP features</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Full backend integration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">User authentication</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Database integration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">API development</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Admin dashboard</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-white text-lg">✓</span>
+                            <span class="text-gray-300">Payment gateway</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-[#E50914] text-white py-3 rounded-xl font-bold hover:bg-[#c40812] transition mb-3">
+                        📱 Contact on WhatsApp
+                    </button>
+                    <button class="w-full border-2 border-white text-white py-3 rounded-xl font-bold hover:bg-white hover:text-[#E50914] transition">
+                        📧 Send Email
+                    </button>
+                </article>
+            </div>
+
+            <!-- Optional Add-ons -->
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold mb-4 text-white">Optional Add-ons</h3>
+                <p class="text-lg text-gray-300 mb-12">Supercharge your website with these monthly services. Cancel anytime.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-dark-custom p-8 rounded-lg border border-custom text-center">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h4 class="text-xl font-bold mb-2 text-white">Local SEO Boost</h4>
+                    <p class="text-gray-400 mb-4 text-sm">Dominate local search results</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹332<span class="text-base font-normal">/month</span></div>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-6 text-left">
+                        <li>• Google Business Profile</li>
+                        <li>• Local citation building</li>
+                        <li>• NAP consistency</li>
+                        <li>• Monthly SEO reports</li>
+                    </ul>
+                    <button class="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-200">Add to Website</button>
+                </div>
+
+                <div class="bg-dark-custom p-8 rounded-lg border border-custom text-center">
+                    <div class="text-4xl mb-4">📅</div>
+                    <h4 class="text-xl font-bold mb-2 text-white">Appointment Booking</h4>
+                    <p class="text-gray-400 mb-4 text-sm">24/7 booking from website</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹166<span class="text-base font-normal">/month</span></div>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-6 text-left">
+                        <li>• Online booking calendar</li>
+                        <li>• Email reminders</li>
+                        <li>• SMS notifications</li>
+                        <li>• Calendar sync</li>
+                    </ul>
+                    <button class="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-200">Add to Website</button>
+                </div>
+
+                <div class="bg-dark-custom p-8 rounded-lg border border-custom text-center">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h4 class="text-xl font-bold mb-2 text-white">Reputation Manager</h4>
+                    <p class="text-gray-400 mb-4 text-sm">Manage online reviews</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹415<span class="text-base font-normal">/month</span></div>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-6 text-left">
+                        <li>• Google review monitoring</li>
+                        <li>• Response assistance</li>
+                        <li>• Multi-platform tracking</li>
+                        <li>• Reputation reports</li>
+                    </ul>
+                    <button class="w-full bg-white text-black py-3 rounded-lg font-medium hover:bg-gray-200">Add to Website</button>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-gray-300 text-lg">💰 <strong>Money-Back Guarantee</strong> • 🔒 <strong>No Hidden Fees</strong> • ⚡ <strong>Fast Delivery Promise</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hire Developers & Designers Section -->
+    <section id="hire" class="py-20 px-4 bg-dark-custom">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white">Hire Expert Developers & Designers</h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Scale your team with our vetted professionals. Hourly rates, flexible contracts.</p>
+            </div>
+
+            <!-- Development & Engineering -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-10 text-white">🔧 Development & Engineering</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">👨‍💻</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Frontend Developer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹799/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Expert in React, Next.js, Vue.js, and modern frontend frameworks. Build stunning, performant user interfaces.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• React & Next.js specialist</li>
+                            <li>• Responsive design expert</li>
+                            <li>• Performance optimization</li>
+                            <li>• 5+ years experience</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Backend Developer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹990/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Node.js, Python, API development, and scalable database architecture. Build robust backend systems.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• Node.js & Python expert</li>
+                            <li>• RESTful & GraphQL APIs</li>
+                            <li>• Database architecture</li>
+                            <li>• Microservices design</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">☁️</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">DevOps Architect</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹1299/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Cloud infrastructure, CI/CD pipelines, and deployment automation. Scale with confidence.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• AWS/Azure/GCP certified</li>
+                            <li>• Docker & Kubernetes</li>
+                            <li>• CI/CD automation</li>
+                            <li>• Infrastructure as Code</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">🤖</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">ML Engineer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹1299/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Machine learning models, AI solutions, and data science expertise. Turn data into insights.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• TensorFlow & PyTorch</li>
+                            <li>• Deep learning models</li>
+                            <li>• NLP & Computer Vision</li>
+                            <li>• Model deployment</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Digital Marketing & Design -->
+            <div>
+                <h3 class="text-3xl font-bold mb-10 text-white">🎨 Digital Marketing & Design</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">SEO Specialist</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹599/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Advanced SEO strategies, keyword research, and organic traffic growth. Dominate search rankings.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• Technical SEO audit</li>
+                            <li>• Keyword strategy</li>
+                            <li>• Link building campaigns</li>
+                            <li>• Google Analytics setup</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Graphic Designer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹300/post</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Professional graphics, social media designs, and brand assets. Make your brand stand out.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• Social media graphics</li>
+                            <li>• Brand identity design</li>
+                            <li>• Marketing materials</li>
+                            <li>• Canva & Adobe expert</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">✍️</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">Content Writer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹499/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">Engaging blog posts, articles, and marketing copy. Content that converts and engages.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• SEO-optimized content</li>
+                            <li>• Blog & article writing</li>
+                            <li>• Product descriptions</li>
+                            <li>• Email campaigns</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+
+                    <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+                        <div class="text-4xl mb-4">🖌️</div>
+                        <h4 class="text-xl font-bold mb-3 text-white">UI/UX Designer</h4>
+                        <div class="text-2xl font-bold text-white mb-4">₹799/hr</div>
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm">User-centered design, wireframing, and prototyping. Create delightful user experiences.</p>
+                        <ul class="text-sm text-gray-400 mb-6 space-y-1">
+                            <li>• User research & testing</li>
+                            <li>• Wireframing & prototyping</li>
+                            <li>• Design systems</li>
+                            <li>• Figma & Adobe XD</li>
+                        </ul>
+                        <button class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812]">Hire Now →</button>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white">
+                    Our <span class="bg-[#E50914] text-white px-3">Services</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">We offer a range of creative and digital services designed to help your brand stand out.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">01</span>
+                        <span>UI/UX Design</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">02</span>
+                        <span>Web Development</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">03</span>
+                        <span>Mobile App Development</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">04</span>
+                        <span>Branding & Identity</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">05</span>
+                        <span>Digital Marketing</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white text-xl md:text-2xl font-semibold hover:text-white transition cursor-pointer group p-6 bg-dark-custom rounded-lg border border-custom">
+                        <span class="text-white text-2xl font-bold">06</span>
+                        <span>E-commerce Solutions</span>
+                        <span class="ml-auto group-hover:translate-x-2 transition text-white">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 px-4 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Our Proven Process</h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">From concept to launch in 4 simple steps</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 bg-dark-custom rounded-xl border border-custom hover:border-[#E50914] hover:bg-gray-800 transition-all duration-300 group">
+                    <div class="text-5xl mb-4 text-center">📋</div>
+                    <div class="text-3xl font-bold text-[#E50914] mb-3 text-center">01</div>
+                    <h3 class="text-xl font-bold mb-3 text-white text-center">Discovery Call</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed text-center">We discuss your vision, goals, and requirements. Understanding your business is our priority.</p>
+                </div>
+
+                <div class="p-8 bg-dark-custom rounded-xl border border-custom hover:border-[#E50914] hover:bg-gray-800 transition-all duration-300 group">
+                    <div class="text-5xl mb-4 text-center">🎨</div>
+                    <div class="text-3xl font-bold text-[#E50914] mb-3 text-center">02</div>
+                    <h3 class="text-xl font-bold mb-3 text-white text-center">Design Phase</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed text-center">Our designers create stunning mockups and prototypes tailored to your brand identity.</p>
+                </div>
+
+                <div class="p-8 bg-dark-custom rounded-xl border border-custom hover:border-[#E50914] hover:bg-gray-800 transition-all duration-300 group">
+                    <div class="text-5xl mb-4 text-center">⚡</div>
+                    <div class="text-3xl font-bold text-[#E50914] mb-3 text-center">03</div>
+                    <h3 class="text-xl font-bold mb-3 text-white text-center">Development</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed text-center">Expert developers bring designs to life with clean, efficient, and scalable code.</p>
+                </div>
+
+                <div class="p-8 bg-dark-custom rounded-xl border border-custom hover:border-[#E50914] hover:bg-gray-800 transition-all duration-300 group">
+                    <div class="text-5xl mb-4 text-center">🚀</div>
+                    <div class="text-3xl font-bold text-[#E50914] mb-3 text-center">04</div>
+                    <h3 class="text-xl font-bold mb-3 text-white text-center">Launch & Support</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed text-center">We deploy your project and provide ongoing support to ensure continued success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 bg-black">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Let's Build Together</h2>
+                <p class="text-xl md:text-2xl text-gray-300">Tell us about your project and we'll get back to you within 2 hours</p>
+            </div>
+
+            <div class="card bg-dark-custom border border-custom rounded-3xl p-10 shadow-2xl">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block mb-3 font-semibold text-lg">Full Name *</label>
+                            <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                        </div>
+                        <div>
+                            <label class="block mb-3 font-semibold text-lg">Email Address *</label>
+                            <input type="email" placeholder="john@example.com" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Phone Number</label>
+                        <input type="tel" placeholder="+91 98765 43210" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
+                    </div>
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Project Type *</label>
+                        <select class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition" required>
+                            <option value="">Select a service</option>
+                            <option value="static-mvp">Static MVP (1 Week)</option>
+                            <option value="full-mvp">Full MVP (1 Month)</option>
+                            <option value="hire-developer">Hire Developer</option>
+                            <option value="hire-designer">Hire Designer</option>
+                            <option value="seo-marketing">SEO & Marketing</option>
+                            <option value="custom">Custom Project</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Project Details *</label>
+                        <textarea rows="6" placeholder="Tell us about your project, goals, and timeline..." class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition resize-none" required></textarea>
+                    </div>
+                    <div>
+                        <label class="block mb-3 font-semibold text-lg">Budget Range</label>
+                        <select class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
+                            <option value="">Select budget range</option>
+                            <option value="under-50k">Under ₹50,000</option>
+                            <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+                            <option value="1l-3l">₹1,00,000 - ₹3,00,000</option>
+                            <option value="3l-5l">₹3,00,000 - ₹5,00,000</option>
+                            <option value="above-5l">Above ₹5,00,000</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button w-full bg-white text-black py-5 rounded-xl text-xl font-bold hover:bg-gray-200">
+                        🚀 Send Message & Get Quote
+                    </button>
+                    <p class="text-center text-gray-300 text-sm">We respond within 2 hours • Your information is 100% secure</p>
+                </form>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-4xl mb-3">📧</div>
+                    <h4 class="font-bold mb-2">Email Us</h4>
+                    <p class="text-gray-300">hello@Quick Launch.com</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-3">📱</div>
+                    <h4 class="font-bold mb-2">Call/WhatsApp</h4>
+                    <p class="text-gray-300">+91 98765 43210</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-3">🌍</div>
+                    <h4 class="font-bold mb-2">Location</h4>
+                    <p class="text-gray-300">India • Remote Friendly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-4 bg-dark-custom">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-300">Everything you need to know about our services</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">❓</span>
+                        How fast can you deliver my project?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        For static MVPs, we deliver within 7 days. Full MVP with backend takes approximately 30 days. We also offer expedited services for urgent projects.
+                    </p>
+                </div>
+
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">💰</span>
+                        What payment methods do you accept?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        We accept bank transfers, UPI, credit/debit cards, and international payment methods like PayPal and Stripe. 50% advance, 50% on completion.
+                    </p>
+                </div>
+
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">🔄</span>
+                        Do you offer revisions?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        Yes! We include 2-3 rounds of revisions with all our packages. Additional revisions can be purchased separately if needed.
+                    </p>
+                </div>
+
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">🛠️</span>
+                        What technologies do you use?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        We work with React, Next.js, Node.js, Python, MongoDB, PostgreSQL, AWS, and all modern web technologies. We choose the best stack for your specific needs.
+                    </p>
+                </div>
+
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">📱</span>
+                        Will my website be mobile-friendly?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        Absolutely! All our websites are fully responsive and optimized for mobile, tablet, and desktop devices. Mobile-first design is our standard approach.
+                    </p>
+                </div>
+
+                <div class="card bg-dark-custom border border-custom p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-3 flex items-center">
+                        <span class="text-2xl mr-3">💼</span>
+                        Do you sign NDAs?
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed ml-11">
+                        Yes, we're happy to sign NDAs and confidentiality agreements before starting any project. Your privacy and IP are completely protected.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 px-4 border-t border-custom">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl" style="color: #E50914;">⭐</span>
+                        <h3 class="text-3xl font-black text-white">Quick Launch</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">Empowering brands through creative solutions. From web development to branding, we deliver innovative strategies that elevate your brand.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                            <span class="text-lg">𝕏</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                            <span class="text-lg">in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                            <span class="text-lg">f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                            <span class="text-lg">IG</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition">Web Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Mobile Apps</a></li>
+                        <li><a href="#services" class="hover:text-white transition">UI/UX Design</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Digital Marketing</a></li>
+                        <li><a href="#services" class="hover:text-white transition">DevOps & Cloud</a></li>
+                        <li><a href="#services" class="hover:text-white transition">AI/ML Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+               
+            </div>
+
+            <div class="border-t border-custom pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-sm">© 2024 Quick Launch. All rights reserved. Made with ❤️ in India</p>
+                    <div class="flex gap-6 text-sm text-gray-400">
+                        <a href="#" class="hover:text-white transition">Privacy</a>
+                        <a href="#" class="hover:text-white transition">Terms</a>
+                        <a href="#" class="hover:text-white transition">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Book Your Website</h2>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block mb-2 font-semibold text-white">Name *</label>
+                    <input type="text" id="userName" name="name" placeholder="Enter your name" required
+                        class="w-full px-4 py-3 rounded-lg border-2 border-custom bg-black text-white focus:outline-none focus:ring-2 focus:ring-[#E50914] focus:border-[#E50914] transition">
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-white">Email *</label>
+                    <input type="email" id="userEmail" name="email" placeholder="Enter your email" required
+                        class="w-full px-4 py-3 rounded-lg border-2 border-custom bg-black text-white focus:outline-none focus:ring-2 focus:ring-[#E50914] focus:border-[#E50914] transition">
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-white">Phone Number *</label>
+                    <input type="tel" id="userPhone" name="phone" placeholder="Enter your phone number" required
+                        class="w-full px-4 py-3 rounded-lg border-2 border-custom bg-black text-white focus:outline-none focus:ring-2 focus:ring-[#E50914] focus:border-[#E50914] transition">
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-white">Category</label>
+                    <input type="text" id="selectedCategory" name="category" readonly
+                        class="w-full px-4 py-3 rounded-lg border-2 border-custom bg-gray-800 text-gray-400 cursor-not-allowed">
+                </div>
+                <button type="submit" class="w-full bg-[#E50914] text-white py-3 rounded-lg font-bold hover:bg-[#c40812] transition text-lg">
+                    Submit & Send Email
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form Submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you within 2 hours.');
+                e.target.reset();
+            });
+        }
+
+        // Booking Modal Functionality
+        const bookingModal = document.getElementById('bookingModal');
+        const closeModal = document.getElementById('closeModal');
+        const bookingForm = document.getElementById('bookingForm');
+        const selectedCategoryInput = document.getElementById('selectedCategory');
+        const industryCards = document.querySelectorAll('.industry-card');
+
+        // Open modal when clicking on industry cards
+        industryCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't open if clicking directly on the button (let button handle it)
+                if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                    const category = card.getAttribute('data-category');
+                    openBookingModal(category);
+                }
+            });
+        });
+
+        // Also handle button clicks directly
+        industryCards.forEach(card => {
+            const button = card.querySelector('button');
+            if (button) {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const category = card.getAttribute('data-category');
+                    openBookingModal(category);
+                });
+            }
+        });
+
+        function openBookingModal(category) {
+            selectedCategoryInput.value = category;
+            bookingModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeBookingModal() {
+            bookingModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            bookingForm.reset();
+        }
+
+        // Close modal when clicking close button
+        if (closeModal) {
+            closeModal.addEventListener('click', closeBookingModal);
+        }
+
+        // Close modal when clicking outside
+        if (bookingModal) {
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) {
+                    closeBookingModal();
+                }
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+                closeBookingModal();
+            }
+        });
+
+        // Handle booking form submission
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('userName').value.trim();
+                const email = document.getElementById('userEmail').value.trim();
+                const phone = document.getElementById('userPhone').value.trim();
+                const category = selectedCategoryInput.value;
+
+                if (!name || !email || !phone) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                // Create email subject and body
+                const subject = encodeURIComponent(`Book ${category} Website`);
+                const body = encodeURIComponent(
+                    `Hello,\n\nI would like to book a website for ${category} category.\n\n` +
+                    `Details:\n` +
+                    `Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Phone: ${phone}\n` +
+                    `Category: ${category}\n\n` +
+                    `Please contact me to proceed with the booking.\n\n` +
+                    `Thank you!`
+                );
+
+                // Create mailto link
+                const mailtoLink = `mailto:harishchoure312@gmail.com?subject=${subject}&body=${body}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Close modal after a short delay
+                setTimeout(() => {
+                    closeBookingModal();
+                    
+                }, 500);
+            });
+        }
+    </script>
+</body>
+</html>
