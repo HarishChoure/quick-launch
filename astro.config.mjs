@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/quick-launch/',
+  base: '/',
   integrations: [tailwind()],
   output: 'static',
 });
