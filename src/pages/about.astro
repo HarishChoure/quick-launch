@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Process from '../components/Process.astro';
+import { COMPANY_NAME, COMPANY_TAGLINE } from '../constants/contact';
+---
+
+<Layout 
+  title="About Us - Quick Launch | Our Mission, Vision & Process"
+  description="Learn about Quick Launch - empowering brands through creative solutions. Our mission, vision, and proven process for delivering exceptional digital experiences."
+>
+  <Navigation />
+  
+  <!-- About Page -->
+  <section class="pt-32 pb-20 px-4 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <!-- About Quick Launch -->
+      <div class="mb-20">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white text-center">
+          About <span class="bg-[#E50914] text-white px-3">{COMPANY_NAME}</span>
+        </h1>
+        <div class="max-w-4xl mx-auto">
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-6 text-center">
+            {COMPANY_TAGLINE}
+          </p>
+          <p class="text-base md:text-lg text-gray-400 leading-relaxed text-center">
+            With over 10,000 websites delivered in 24 hours, we've revolutionized how businesses get online. 
+            Our team of expert developers, designers, and digital marketers work together to create solutions 
+            that not only look great but drive real business results.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Mission -->
+      <div class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white text-center">Our Mission</h2>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed text-center">
+            To democratize web presence for businesses of all sizes by delivering professional, 
+            affordable, and lightning-fast digital solutions. We believe every business deserves 
+            a world-class online presence, regardless of budget or timeline.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Vision -->
+      <div class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white text-center">Our Vision</h2>
+          <p class="text-lg md:text-xl text-gray-300 leading-relaxed text-center">
+            To become the go-to platform for businesses seeking rapid, reliable, and revolutionary 
+            digital solutions. We envision a future where launching a professional website takes 
+            hours, not months, and where quality and speed go hand in hand.
+          </p>
+        </div>
+      </div>
+
+      <!-- Why Choose Us -->
+      <div class="mb-20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold mb-12 text-white text-center">Why Choose Us</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">⚡</div>
+              <h3 class="text-xl font-bold mb-3 text-white">Lightning Fast Delivery</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Get your website live in 24 hours. We've perfected the art of rapid deployment 
+                without compromising on quality.
+              </p>
+            </div>
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">💰</div>
+              <h3 class="text-xl font-bold mb-3 text-white">Transparent Pricing</h3>
+              <p class="text-gray-300 leading-relaxed">
+                One-time payment of ₹8,300 includes lifetime hosting. No hidden fees, 
+                no monthly subscriptions, no surprises.
+              </p>
+            </div>
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">🎯</div>
+              <h3 class="text-xl font-bold mb-3 text-white">Industry Expertise</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Over 10,000 websites delivered across various industries. We understand 
+                what works for your business type.
+              </p>
+            </div>
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">🔒</div>
+              <h3 class="text-xl font-bold mb-3 text-white">Lifetime Support</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Your website comes with lifetime hosting and 12 content updates per year. 
+                We're here for the long haul.
+              </p>
+            </div>
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">🚀</div>
+              <h3 class="text-xl font-bold mb-3 text-white">Modern Technology</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Built with the latest technologies - React, Next.js, and modern frameworks 
+                for optimal performance.
+              </p>
+            </div>
+            <div class="p-6 bg-dark-custom border border-custom rounded-xl">
+              <div class="text-4xl mb-4">✅</div>
+              <h3 class="text-xl font-bold mb-3 text-white">100% Satisfaction</h3>
+              <p class="text-gray-300 leading-relaxed">
+                Money-back guarantee if you're not satisfied. We're confident in our 
+                ability to deliver exceptional results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Process -->
+      <div>
+        <Process />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+

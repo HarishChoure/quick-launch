@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { COMPANY_NAME } from '../constants/contact';
 
 interface Props {
   title?: string;
@@ -7,9 +8,12 @@ interface Props {
 }
 
 const {
-  title = "Quick Launch - Creative Design Agency | Empowering Brands Through Creative Solutions",
-  description = "Quick Launch - Empowering brands through creative solutions. Professional website development, UI/UX design, branding, and digital marketing services."
+  title = `${COMPANY_NAME} - Creative Design Agency | Empowering Brands Through Creative Solutions`,
+  description = `${COMPANY_NAME} - Empowering brands through creative solutions. Professional website development, UI/UX design, branding, and digital marketing services.`
 } = Astro.props;
+
+// Get current URL for canonical
+const canonicalUrl = Astro.url.href;
 ---
 
 <!doctype html>
@@ -18,12 +22,13 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="website development, UI UX design, branding, digital marketing, creative agency, web design, mobile apps, e-commerce solutions" />
-    <meta name="author" content="Quick Launch" />
-    <meta property="og:title" content="Quick Launch - Creative Design Agency" />
-    <meta property="og:description" content="Empowering brands through creative solutions. From web development to branding, we deliver innovative strategies that elevate your brand." />
+    <meta name="keywords" content="website development, UI UX design, branding, digital marketing, creative agency, web design, mobile apps, e-commerce solutions, quick launch, 24 hour website" />
+    <meta name="author" content={COMPANY_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href="https://Quick Launch.com" />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
   </head>
   <body class="bg-black text-white">

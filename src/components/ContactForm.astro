@@ -1,0 +1,140 @@
+---
+import { EMAIL_ADDRESS, getEmailUrl, getWhatsAppUrl } from '../constants/contact';
+
+interface Props {
+  serviceType?: string;
+  planType?: string;
+  prefilledService?: string;
+  showServiceField?: boolean;
+}
+
+const {
+  serviceType = '',
+  planType = '',
+  prefilledService = '',
+  showServiceField = true
+} = Astro.props;
+
+const serviceValue = prefilledService || serviceType || '';
+---
+
+<!-- Contact Form Component -->
+<form id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label for="formName" class="block mb-3 font-semibold text-lg text-white">Full Name *</label>
+      <input 
+        type="text" 
+        id="formName"
+        name="name"
+        placeholder="John Doe" 
+        required
+        class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
+      >
+    </div>
+    <div>
+      <label for="formEmail" class="block mb-3 font-semibold text-lg text-white">Email Address *</label>
+      <input 
+        type="email" 
+        id="formEmail"
+        name="email"
+        placeholder="john@example.com" 
+        required
+        class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
+      >
+    </div>
+  </div>
+  
+  <div>
+    <label for="formPhone" class="block mb-3 font-semibold text-lg text-white">Phone Number</label>
+    <input 
+      type="tel" 
+      id="formPhone"
+      name="phone"
+      placeholder="+91 98765 43210" 
+      class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
+    >
+  </div>
+  
+  {showServiceField && (
+    <div>
+      <label for="formService" class="block mb-3 font-semibold text-lg text-white">Service Required *</label>
+      <select 
+        id="formService"
+        name="service"
+        required
+        value={serviceValue}
+        class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
+      >
+        <option value="">Select a service</option>
+        <option value="quick-launch">Quick Launch (24 Hours)</option>
+        <option value="static-mvp">Static MVP (1 Week)</option>
+        <option value="full-mvp">Full MVP (1 Month)</option>
+        <option value="frontend-developer">Frontend Developer</option>
+        <option value="backend-developer">Backend Developer</option>
+        <option value="devops-architect">DevOps Architect</option>
+        <option value="ml-engineer">ML Engineer</option>
+        <option value="seo-specialist">SEO Specialist</option>
+        <option value="graphic-designer">Graphic Designer</option>
+        <option value="content-writer">Content Writer</option>
+        <option value="ui-ux-designer">UI/UX Designer</option>
+        <option value="web-development">Web Development</option>
+        <option value="mobile-app-development">Mobile App Development</option>
+        <option value="ui-ux-design">UI/UX Design</option>
+        <option value="branding-identity">Branding & Identity</option>
+        <option value="digital-marketing">Digital Marketing</option>
+        <option value="ecommerce-solutions">E-commerce Solutions</option>
+        <option value="custom">Custom Project</option>
+      </select>
+    </div>
+  )}
+  
+  <div>
+    <label for="formMessage" class="block mb-3 font-semibold text-lg text-white">Message *</label>
+    <textarea 
+      id="formMessage"
+      name="message"
+      rows="6" 
+      placeholder="Tell us about your project, goals, and timeline..." 
+      required
+      class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition resize-none"
+    ></textarea>
+  </div>
+  
+  <button 
+    type="submit" 
+    class="w-full bg-[#E50914] text-white py-5 rounded-xl text-xl font-bold hover:bg-[#c40812] transition"
+  >
+    🚀 Send Message & Get Quote
+  </button>
+  
+  <p class="text-center text-gray-300 text-sm">We respond within 2 hours • Your information is 100% secure</p>
+</form>
+
+<script define:vars={{ emailAddress: EMAIL_ADDRESS }}>
+  function handleFormSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const service = formData.get('service') as string;
+    const message = formData.get('message') as string;
+    
+    // Build email body
+    const emailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nService: ${service || 'Not specified'}\n\nMessage:\n${message}`;
+    const emailSubject = `New Inquiry: ${service || 'General Inquiry'}`;
+    
+    // Use the email address from constants
+    const emailUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = emailUrl;
+    
+    // Optional: Show success message
+    alert('Thank you! Your email client should open now. If it doesn\'t, please email us directly.');
+  }
+</script>
+

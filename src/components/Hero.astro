@@ -1,5 +1,5 @@
 ---
-// Hero section component
+import CTAButton from './CTAButton.astro';
 ---
 
 <!-- Hero Section - Quick Launch USP -->
@@ -30,12 +30,8 @@
             
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#industries" class="bg-[#E50914] text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#c40812] transition">
-                    Choose Your Industry Template
-                </a>
-                <a href="#pricing" class="bg-transparent text-white px-8 py-4 rounded-lg text-lg font-bold border-2 border-white hover:bg-white hover:text-[#E50914] transition">
-                    See Pricing
-                </a>
+                <CTAButton variant="book-now" serviceType="Quick Launch Website" planType="Quick Launch" text="Book Now" />
+                <CTAButton variant="contact-us" text="Contact Us" />
             </div>
         </div>
         

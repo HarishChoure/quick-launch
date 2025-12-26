@@ -1,0 +1,104 @@
+---
+import { getWhatsAppUrl, getEmailUrl, DEFAULT_MESSAGE, COMPANY_NAME } from '../constants/contact';
+
+interface Props {
+  variant?: 'book-now' | 'contact-us';
+  serviceType?: string;
+  planType?: string;
+  text?: string;
+  className?: string;
+}
+
+const {
+  variant = 'book-now',
+  serviceType = '',
+  planType = '',
+  text,
+  className = ''
+} = Astro.props;
+
+const buttonText = text || (variant === 'book-now' ? 'Book Now' : 'Contact Us');
+const buttonId = `cta-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="relative">
+  {variant === 'book-now' ? (
+    <>
+      <button 
+        id={buttonId}
+        class={`bg-[#E50914] text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#c40812] transition ${className}`}
+      >
+        {buttonText}
+      </button>
+      
+      <!-- Dropdown Menu -->
+      <div 
+        id={`${buttonId}-dropdown`}
+        class="hidden absolute top-full left-0 mt-2 w-64 bg-dark-custom border-2 border-white rounded-xl shadow-2xl z-50 overflow-hidden"
+      >
+        <a 
+          href={getWhatsAppUrl(`Hello ${COMPANY_NAME}! I'm interested in ${serviceType || planType || 'your services'}. Please get back to me.`)}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition border-b border-custom"
+        >
+          📱 Connect on WhatsApp
+        </a>
+        <a 
+          href={getEmailUrl(
+            `Inquiry: ${serviceType || planType || 'General Inquiry'}`,
+            `Hello ${COMPANY_NAME}!\n\nI'm interested in ${serviceType || planType || 'your services'}.\n\nPlease get back to me.\n\nThank you!`
+          )}
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition border-b border-custom"
+        >
+          📧 Connect via Email
+        </a>
+        <a 
+          href="/contact"
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition"
+        >
+          📝 Fill Form
+        </a>
+      </div>
+    </>
+  ) : (
+    <a 
+      href="/contact"
+      class={`bg-transparent text-white px-8 py-4 rounded-lg text-lg font-bold border-2 border-white hover:bg-white hover:text-[#E50914] transition ${className}`}
+    >
+      {buttonText}
+    </a>
+  )}
+</div>
+
+{variant === 'book-now' && (
+  <script define:vars={{ buttonId }}>
+    (function() {
+      const button = document.getElementById(buttonId);
+      const dropdown = document.getElementById(buttonId + '-dropdown');
+      
+      if (button && dropdown) {
+        // Toggle dropdown on click
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle('hidden');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.add('hidden');
+          }
+        });
+        
+        // Close dropdown when clicking on a link
+        dropdown.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            dropdown.classList.add('hidden');
+          });
+        });
+      }
+    })();
+  </script>
+)}
+
