@@ -1,10 +1,15 @@
 ---
-import { getWhatsAppUrl, getEmailUrl, DEFAULT_MESSAGE, COMPANY_NAME } from '../constants/contact';
+import {
+  getWhatsAppUrl,
+  getEmailUrl,
+  DEFAULT_MESSAGE,
+  COMPANY_NAME
+} from '../constants/contact';
 
 interface Props {
   variant?: 'book-now' | 'contact-us';
   serviceType?: string;
-  planType?: string;
+  planType?: string; // MVP detection
   text?: string;
   className?: string;
 }
@@ -17,88 +22,144 @@ const {
   className = ''
 } = Astro.props;
 
-const buttonText = text || (variant === 'book-now' ? 'Book Now' : 'Contact Us');
-const buttonId = `cta-${Math.random().toString(36).substr(2, 9)}`;
----
+const buttonText =
+  text || (variant === 'book-now' ? 'Book Now' : 'Contact Us');
 
-<div class="relative">
-  {variant === 'book-now' ? (
-    <>
-      <button 
-        id={buttonId}
-        class={`bg-[#E50914] text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-[#c40812] transition ${className}`}
-      >
-        {buttonText}
-      </button>
-      
-      <!-- Dropdown Menu -->
-      <div 
-        id={`${buttonId}-dropdown`}
-        class="hidden absolute top-full left-0 mt-2 w-64 bg-dark-custom border-2 border-white rounded-xl shadow-2xl z-50 overflow-hidden"
-      >
-        <a 
-          href={getWhatsAppUrl(`Hello ${COMPANY_NAME}! I'm interested in ${serviceType || planType || 'your services'}. Please get back to me.`)}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-6 py-4 text-white hover:bg-[#E50914] transition border-b border-custom"
-        >
-          📱 Connect on WhatsApp
-        </a>
-        <a 
-          href={getEmailUrl(
-            `Inquiry: ${serviceType || planType || 'General Inquiry'}`,
-            `Hello ${COMPANY_NAME}!\n\nI'm interested in ${serviceType || planType || 'your services'}.\n\nPlease get back to me.\n\nThank you!`
-          )}
-          class="block px-6 py-4 text-white hover:bg-[#E50914] transition border-b border-custom"
-        >
-          📧 Connect via Email
-        </a>
-        <a 
-          href="/contact"
-          class="block px-6 py-4 text-white hover:bg-[#E50914] transition"
-        >
-          📝 Fill Form
-        </a>
-      </div>
-    </>
-  ) : (
-    <a 
-      href="/contact"
-      class={`bg-transparent text-white px-8 py-4 rounded-lg text-lg font-bold border-2 border-white hover:bg-white hover:text-[#E50914] transition ${className}`}
+const idBase = `cta-${serviceType || planType || 'default'}`
+  .replace(/\s+/g, '-')
+  .toLowerCase();
+
+/* ✅ NORMAL size (Home, other pages) */
+const baseButtonClasses = `
+  inline-flex items-center justify-center
+  px-8 py-4 md:px-10 md:py-5
+  text-base md:text-lg
+  rounded-xl font-semibold
+  transition-all duration-200 ease-out
+`;
+
+/* ✅ SMALL size (ONLY MVP Contact Us) */
+const smallButtonClasses = `
+  inline-flex items-center justify-center
+  px-4 py-2
+  text-sm
+  rounded-md font-semibold
+  transition-all duration-200 ease-out
+`;
+
+/* ✅ Apply small size only for MVP Contact Us */
+const contactUsSizeClasses =
+  variant === 'contact-us' && planType === 'mvp'
+    ? smallButtonClasses
+    : baseButtonClasses;
+---
+{variant === 'book-now' ? (
+  <div class="relative inline-block">
+    <button
+      id={idBase}
+      aria-haspopup="true"
+      aria-expanded="false"
+      class={`
+        ${baseButtonClasses}
+        bg-[#E50914] text-white
+        hover:bg-[#c40812]
+        active:scale-[0.97]
+        ${className}
+      `}
     >
       {buttonText}
-    </a>
-  )}
-</div>
+    </button>
+
+    <!-- Dropdown -->
+    <div
+      id={`${idBase}-dropdown`}
+      class="hidden absolute top-full left-0 mt-3 w-full max-w-[280px]
+        bg-[#0f0f0f] border border-white/20 rounded-xl shadow-2xl
+        z-50 overflow-hidden origin-top scale-95 opacity-0
+        transition-all duration-200"
+      role="menu"
+    >
+      <a
+        href={getWhatsAppUrl(
+          `Hello ${COMPANY_NAME}! I'm interested in ${serviceType || planType || 'your services'}.`
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        role="menuitem"
+        class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center"
+      >
+        📱 WhatsApp
+      </a>
+
+      <a
+        href={getEmailUrl(
+          `Inquiry: ${serviceType || planType || 'General Inquiry'}`,
+          `Hello ${COMPANY_NAME},\n\nI'm interested in ${serviceType || planType || 'your services'}.\n\nThank you.`
+        )}
+        role="menuitem"
+        class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center"
+      >
+        📧 Email
+      </a>
+
+      <a
+        href="/contact"
+        role="menuitem"
+        class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center"
+      >
+        📝 Fill Form
+      </a>
+    </div>
+  </div>
+) : (
+  <!-- CONTACT US -->
+  <a
+    href="/contact"
+    class={`
+      ${contactUsSizeClasses}
+      border-2 border-white
+      bg-transparent text-white
+      hover:bg-white hover:text-[#E50914]
+      ${className}
+    `}
+  >
+    {buttonText}
+  </a>
+)}
 
 {variant === 'book-now' && (
-  <script define:vars={{ buttonId }}>
-    (function() {
-      const button = document.getElementById(buttonId);
-      const dropdown = document.getElementById(buttonId + '-dropdown');
-      
-      if (button && dropdown) {
-        // Toggle dropdown on click
-        button.addEventListener('click', (e) => {
-          e.stopPropagation();
-          dropdown.classList.toggle('hidden');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-          if (!button.contains(e.target) && !dropdown.contains(e.target)) {
-            dropdown.classList.add('hidden');
-          }
-        });
-        
-        // Close dropdown when clicking on a link
-        dropdown.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            dropdown.classList.add('hidden');
-          });
-        });
-      }
+  <script define:vars={{ idBase }}>
+    (() => {
+      const button = document.getElementById(idBase);
+      const dropdown = document.getElementById(idBase + '-dropdown');
+
+      if (!button || !dropdown) return;
+
+      const open = () => {
+        dropdown.classList.remove('hidden', 'scale-95', 'opacity-0');
+        button.setAttribute('aria-expanded', 'true');
+      };
+
+      const close = () => {
+        dropdown.classList.add('scale-95', 'opacity-0');
+        button.setAttribute('aria-expanded', 'false');
+        setTimeout(() => dropdown.classList.add('hidden'), 150);
+      };
+
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.contains('hidden') ? open() : close();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+          close();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
     })();
   </script>
 )}
-
