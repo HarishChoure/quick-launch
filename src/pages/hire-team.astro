@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import HireTeamModal from '../components/HireTeamModal.astro';
 ---
 
 <Layout 
@@ -38,12 +39,13 @@ import Footer from '../components/Footer.astro';
               <li>• Performance optimization</li>
               <li>• 5+ years experience</li>
             </ul>
-            <a 
-              href="/contact?service=frontend-developer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="Frontend Developer"
+              data-hire-rate="₹799/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- Backend Developer -->
@@ -60,12 +62,13 @@ import Footer from '../components/Footer.astro';
               <li>• Database architecture</li>
               <li>• Microservices design</li>
             </ul>
-            <a 
-              href="/contact?service=backend-developer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="Backend Developer"
+              data-hire-rate="₹990/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- DevOps Architect -->
@@ -82,12 +85,13 @@ import Footer from '../components/Footer.astro';
               <li>• CI/CD automation</li>
               <li>• Infrastructure as Code</li>
             </ul>
-            <a 
-              href="/contact?service=devops-architect" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="DevOps Architect"
+              data-hire-rate="₹1299/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- ML Engineer -->
@@ -104,12 +108,13 @@ import Footer from '../components/Footer.astro';
               <li>• NLP & Computer Vision</li>
               <li>• Model deployment</li>
             </ul>
-            <a 
-              href="/contact?service=ml-engineer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="ML Engineer"
+              data-hire-rate="₹1299/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
         </div>
       </div>
@@ -132,12 +137,13 @@ import Footer from '../components/Footer.astro';
               <li>• Link building campaigns</li>
               <li>• Google Analytics setup</li>
             </ul>
-            <a 
-              href="/contact?service=seo-specialist" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="SEO Specialist"
+              data-hire-rate="₹599/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- Graphic Designer -->
@@ -154,12 +160,13 @@ import Footer from '../components/Footer.astro';
               <li>• Marketing materials</li>
               <li>• Canva & Adobe expert</li>
             </ul>
-            <a 
-              href="/contact?service=graphic-designer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="Graphic Designer"
+              data-hire-rate="₹300/post"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- Content Writer -->
@@ -176,12 +183,13 @@ import Footer from '../components/Footer.astro';
               <li>• Product descriptions</li>
               <li>• Email campaigns</li>
             </ul>
-            <a 
-              href="/contact?service=content-writer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="Content Writer"
+              data-hire-rate="₹499/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
 
           <!-- UI/UX Designer -->
@@ -198,12 +206,13 @@ import Footer from '../components/Footer.astro';
               <li>• Design systems</li>
               <li>• Figma & Adobe XD</li>
             </ul>
-            <a 
-              href="/contact?service=ui-ux-designer" 
-              class="block w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            <button 
+              data-hire-role="UI/UX Designer"
+              data-hire-rate="₹799/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
             >
               Hire Now →
-            </a>
+            </button>
           </article>
         </div>
       </div>
@@ -211,5 +220,6 @@ import Footer from '../components/Footer.astro';
   </section>
   
   <Footer />
+  <HireTeamModal />
 </Layout>
 

@@ -663,6 +663,7 @@ nav a:hover {
     transform: rotate(90deg) scale(0.95);
 }
 
+/* Mobile Sticky CTA Bar */
 @media (max-width: 768px) {
     .modal-close {
         top: 0.75rem;
@@ -670,6 +671,11 @@ nav a:hover {
         width: 35px;
         height: 35px;
         font-size: 1.75rem;
+    }
+    
+    /* Add padding to footer on mobile to account for sticky CTA */
+    footer {
+        padding-bottom: 6rem;
     }
 }
 
