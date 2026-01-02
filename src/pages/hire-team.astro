@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import HireTeamModal from '../components/HireTeamModal.astro';
+---
+
+<Layout 
+  title="Hire Team - Quick Launch | Developers & Digital Marketing Professionals"
+  description="Hire expert developers and digital marketing professionals. Frontend Developer (₹799/hr), Backend Developer (₹990/hr), DevOps Architect (₹1299/hr), ML Engineer (₹1299/hr), SEO Specialist (₹599/hr), Graphic Designer (₹300/post), Content Writer (₹499/hr), UI/UX Designer (₹799/hr). Hourly rates, flexible contracts."
+>
+  <Navigation />
+  
+  <!-- Hire Team Page -->
+  <section class="pt-32 pb-20 px-4 bg-dark-custom">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Hire Expert Developers & Designers</h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          Scale your team with our vetted professionals. Hourly rates, flexible contracts.
+        </p>
+      </div>
+
+      <!-- Development & Engineering -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-10 text-white text-center">🔧 Hire a Developer</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Frontend Developer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">👨‍💻</div>
+            <h3 class="text-xl font-bold mb-3 text-white">Frontend Developer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹799/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Expert in React, Next.js, Vue.js, and modern frontend frameworks. Build stunning, performant user interfaces.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• React & Next.js specialist</li>
+              <li>• Responsive design expert</li>
+              <li>• Performance optimization</li>
+              <li>• 5+ years experience</li>
+            </ul>
+            <button 
+              data-hire-role="Frontend Developer"
+              data-hire-rate="₹799/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- Backend Developer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">⚙️</div>
+            <h3 class="text-xl font-bold mb-3 text-white">Backend Developer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹990/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Node.js, Python, API development, and scalable database architecture. Build robust backend systems.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• Node.js & Python expert</li>
+              <li>• RESTful & GraphQL APIs</li>
+              <li>• Database architecture</li>
+              <li>• Microservices design</li>
+            </ul>
+            <button 
+              data-hire-role="Backend Developer"
+              data-hire-rate="₹990/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- DevOps Architect -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">☁️</div>
+            <h3 class="text-xl font-bold mb-3 text-white">DevOps Architect</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹1299/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Cloud infrastructure, CI/CD pipelines, and deployment automation. Scale with confidence.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• AWS/Azure/GCP certified</li>
+              <li>• Docker & Kubernetes</li>
+              <li>• CI/CD automation</li>
+              <li>• Infrastructure as Code</li>
+            </ul>
+            <button 
+              data-hire-role="DevOps Architect"
+              data-hire-rate="₹1299/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- ML Engineer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">🤖</div>
+            <h3 class="text-xl font-bold mb-3 text-white">ML Engineer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹1299/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Machine learning models, AI solutions, and data science expertise. Turn data into insights.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• TensorFlow & PyTorch</li>
+              <li>• Deep learning models</li>
+              <li>• NLP & Computer Vision</li>
+              <li>• Model deployment</li>
+            </ul>
+            <button 
+              data-hire-role="ML Engineer"
+              data-hire-rate="₹1299/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+        </div>
+      </div>
+
+      <!-- Digital Marketing & Design -->
+      <div>
+        <h2 class="text-3xl font-bold mb-10 text-white text-center">🎨 Hire a Digital Marketing Team</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- SEO Specialist -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">📊</div>
+            <h3 class="text-xl font-bold mb-3 text-white">SEO Specialist</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹599/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Advanced SEO strategies, keyword research, and organic traffic growth. Dominate search rankings.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• Technical SEO audit</li>
+              <li>• Keyword strategy</li>
+              <li>• Link building campaigns</li>
+              <li>• Google Analytics setup</li>
+            </ul>
+            <button 
+              data-hire-role="SEO Specialist"
+              data-hire-rate="₹599/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- Graphic Designer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-3 text-white">Graphic Designer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹300/post</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Professional graphics, social media designs, and brand assets. Make your brand stand out.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• Social media graphics</li>
+              <li>• Brand identity design</li>
+              <li>• Marketing materials</li>
+              <li>• Canva & Adobe expert</li>
+            </ul>
+            <button 
+              data-hire-role="Graphic Designer"
+              data-hire-rate="₹300/post"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- Content Writer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">✍️</div>
+            <h3 class="text-xl font-bold mb-3 text-white">Content Writer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹499/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              Engaging blog posts, articles, and marketing copy. Content that converts and engages.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• SEO-optimized content</li>
+              <li>• Blog & article writing</li>
+              <li>• Product descriptions</li>
+              <li>• Email campaigns</li>
+            </ul>
+            <button 
+              data-hire-role="Content Writer"
+              data-hire-rate="₹499/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+
+          <!-- UI/UX Designer -->
+          <article class="p-6 bg-black rounded-lg border border-custom hover:border-white transition">
+            <div class="text-4xl mb-4">🖌️</div>
+            <h3 class="text-xl font-bold mb-3 text-white">UI/UX Designer</h3>
+            <div class="text-2xl font-bold text-white mb-4">₹799/hr</div>
+            <p class="text-gray-300 mb-4 leading-relaxed text-sm">
+              User-centered design, wireframing, and prototyping. Create delightful user experiences.
+            </p>
+            <ul class="text-sm text-gray-400 mb-6 space-y-1">
+              <li>• User research & testing</li>
+              <li>• Wireframing & prototyping</li>
+              <li>• Design systems</li>
+              <li>• Figma & Adobe XD</li>
+            </ul>
+            <button 
+              data-hire-role="UI/UX Designer"
+              data-hire-rate="₹799/hr"
+              class="w-full bg-[#E50914] text-white py-3 rounded-lg font-medium hover:bg-[#c40812] text-center transition"
+            >
+              Hire Now →
+            </button>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+  <HireTeamModal />
+</Layout>
+

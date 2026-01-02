@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import CTAButton from '../components/CTAButton.astro';
+import Process from '../components/Process.astro';
+---
+
+<Layout 
+  title="Services - Quick Launch | Web Development, Mobile Apps, UI/UX Design & More"
+  description="Comprehensive digital services including web development, mobile app development, UI/UX design, branding, digital marketing, and e-commerce solutions."
+>
+  <Navigation />
+  
+  <!-- Services Page -->
+  <section class="pt-32 pb-20 px-4 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">
+          Our <span class="bg-[#E50914] text-white px-3">Services</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          We offer a range of creative and digital services designed to help your brand stand out.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Web Development -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">🌐</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Web Development</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Custom websites built with modern technologies. Responsive, fast, and SEO-optimized solutions tailored to your business needs.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• React, Next.js, Vue.js</li>
+            <li>• Responsive design</li>
+            <li>• SEO optimization</li>
+            <li>• Performance tuning</li>
+          </ul>
+          <div class="flex gap-3 items-stretch">
+            <CTAButton variant="book-now" serviceType="Web Development" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+
+        <!-- Mobile App Development -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">📱</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Mobile App Development</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Native and cross-platform mobile applications for iOS and Android. From concept to app store deployment.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• iOS & Android apps</li>
+            <li>• React Native, Flutter</li>
+            <li>• App store optimization</li>
+            <li>• Backend integration</li>
+          </ul>
+          <div class="flex gap-3">
+            <CTAButton variant="book-now" serviceType="Mobile App Development" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+
+        <!-- UI/UX Design -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">🎨</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">UI/UX Design</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            User-centered design that creates delightful experiences. Wireframes, prototypes, and design systems that convert.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• User research & testing</li>
+            <li>• Wireframing & prototyping</li>
+            <li>• Design systems</li>
+            <li>• Figma & Adobe XD</li>
+          </ul>
+          <div class="flex gap-3">
+            <CTAButton variant="book-now" serviceType="UI/UX Design" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+
+        <!-- Branding & Identity -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">✨</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Branding & Identity</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Complete brand identity packages. Logo design, color palettes, typography, and brand guidelines that tell your story.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• Logo & brand identity</li>
+            <li>• Color & typography systems</li>
+            <li>• Brand guidelines</li>
+            <li>• Marketing materials</li>
+          </ul>
+          <div class="flex gap-3">
+            <CTAButton variant="book-now" serviceType="Branding & Identity" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+
+        <!-- Digital Marketing -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">📈</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Digital Marketing</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Data-driven marketing strategies. SEO, social media, content marketing, and PPC campaigns that drive results.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• SEO & SEM</li>
+            <li>• Social media marketing</li>
+            <li>• Content strategy</li>
+            <li>• Analytics & reporting</li>
+          </ul>
+          <div class="flex gap-3">
+            <CTAButton variant="book-now" serviceType="Digital Marketing" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+
+        <!-- E-commerce Solutions -->
+        <article class="p-8 bg-dark-custom border-2 border-custom rounded-3xl hover:border-white transition">
+          <div class="text-5xl mb-4">🛒</div>
+          <h2 class="text-2xl font-bold mb-3 text-white">E-commerce Solutions</h2>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Complete online stores with payment gateways, inventory management, and order processing. Ready to sell.
+          </p>
+          <ul class="text-sm text-gray-400 mb-6 space-y-2">
+            <li>• Online store setup</li>
+            <li>• Payment integration</li>
+            <li>• Inventory management</li>
+            <li>• Order processing</li>
+          </ul>
+          <div class="flex gap-3">
+            <CTAButton variant="book-now" serviceType="E-commerce Solutions" className="flex-1" />
+            <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <Process />
+  
+  <Footer />
+</Layout>
+

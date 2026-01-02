@@ -1,21 +1,21 @@
 ---
-// Navigation component
+import { COMPANY_NAME } from '../constants/contact';
 ---
 
 <nav id="navbar" class="fixed w-full z-50 bg-black border-b border-custom">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center gap-8">
-                <div class="flex items-center gap-2">
+                <a href="/" class="flex items-center gap-2">
                     <span class="starburst">⭐</span>
-                    <h1 class="text-2xl font-semibold text-white">Quick Launch</h1>
-                </div>
+                    <h1 class="text-2xl font-semibold text-white">{COMPANY_NAME}</h1>
+                </a>
                 <div class="hidden md:flex items-center gap-6">
-                    <a href="#industries" class="text-white font-semibold hover:text-[#E50914] transition">Quick Launch</a>
-                    <a href="#pricing" class="text-white hover:text-white transition">Pricing</a>
-                    <a href="#hire" class="text-white hover:text-white transition">Hire Team</a>
-                    <a href="#services" class="text-white hover:text-white transition">Services</a>
-                    <a href="#testimonials" class="text-white hover:text-white transition">Reviews</a>
+                    <a href="/" class="text-white font-semibold hover:text-[#E50914] transition">Home</a>
+                    <a href="/services" class="text-white hover:text-white transition">Services</a>
+                    <a href="/mvp" class="text-white hover:text-white transition">Build MVP</a>
+                    <a href="/hire-team" class="text-white hover:text-white transition">Hire Team</a>
+                    <a href="/contact" class="text-white hover:text-white transition">Contact</a>
                 </div>
             </div>
             <div class="flex items-center gap-4">
@@ -25,19 +25,18 @@
                     </svg>
                 </button>
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="#contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812]">Contact</a>
+                    <a href="/contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812]">Contact</a>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-custom mt-4">
             <div class="flex flex-col gap-4 pt-4">
-                <a href="#industries" class="text-white font-semibold hover:text-[#E50914] transition">Quick Launch</a>
-                <a href="#pricing" class="text-white hover:text-white transition">Pricing</a>
-                <a href="#hire" class="text-white hover:text-white transition">Hire Team</a>
-                <a href="#services" class="text-white hover:text-white transition">Services</a>
-                <a href="#testimonials" class="text-white hover:text-white transition">Reviews</a>
-                <a href="#contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812] text-center">Contact</a>
+                <a href="/" class="text-white font-semibold hover:text-[#E50914] transition">Home</a>
+                <a href="/services" class="text-white hover:text-white transition">Services</a>
+                <a href="/mvp" class="text-white hover:text-white transition">Build MVP</a>
+                <a href="/hire-team" class="text-white hover:text-white transition">Hire Team</a>
+                <a href="/contact" class="bg-[#E50914] text-white px-6 py-2 rounded font-medium hover:bg-[#c40812] text-center">Contact</a>
             </div>
         </div>
     </div>

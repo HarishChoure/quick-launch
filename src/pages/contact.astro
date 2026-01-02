@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import FAQ from '../components/FAQ.astro';
+import { PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL_ADDRESS, getWhatsAppUrl, getEmailUrl, getPhoneUrl } from '../constants/contact';
+---
+
+<Layout 
+  title="Contact Us - Quick Launch | Get in Touch Today"
+  description="Contact Quick Launch for web development, mobile apps, UI/UX design, and digital marketing services. We respond within 2 hours."
+>
+  <Navigation />
+  
+  <!-- Contact Page -->
+  <section class="pt-32 pb-24 px-4 bg-black">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Let's Build Together</h1>
+        <p class="text-xl md:text-2xl text-gray-300">Tell us about your project and we'll get back to you within 2 hours</p>
+      </div>
+
+      <div class="card bg-dark-custom border border-custom rounded-3xl p-10 shadow-2xl mb-16">
+        <ContactForm />
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
+        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
+          <div class="text-4xl mb-3">📧</div>
+          <h3 class="font-bold mb-2 text-white">Email Us</h3>
+          <a 
+            href={getEmailUrl()} 
+            class="text-gray-300 hover:text-[#E50914] transition block break-all"
+          >
+            {EMAIL_ADDRESS}
+          </a>
+        </div>
+        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
+          <div class="text-4xl mb-3">📱</div>
+          <h3 class="font-bold mb-2 text-white">Call/WhatsApp</h3>
+          <a 
+            href={getWhatsAppUrl()} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-300 hover:text-[#E50914] transition block"
+          >
+            {WHATSAPP_NUMBER}
+          </a>
+        </div>
+        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
+          <div class="text-4xl mb-3">🌍</div>
+          <h3 class="font-bold mb-2 text-white">Location</h3>
+          <p class="text-gray-300">India • Remote Friendly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <FAQ />
+  
+  <Footer />
+</Layout>
+

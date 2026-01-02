@@ -1,0 +1,159 @@
+---
+import {
+  getWhatsAppUrl,
+  getEmailUrl,
+  DEFAULT_MESSAGE,
+  COMPANY_NAME
+} from '../constants/contact';
+
+interface Props {
+  variant?: 'book-now' | 'contact-us';
+  serviceType?: string;
+  planType?: string; // MVP detection
+  text?: string;
+  className?: string;
+}
+
+const {
+  variant = 'book-now',
+  serviceType = '',
+  planType = '',
+  text,
+  className = ''
+} = Astro.props;
+
+const buttonText =
+  text || (variant === 'book-now' ? 'Book Now' : 'Contact Us');
+
+const idBase = `cta-${serviceType || planType || 'default'}`
+  .replace(/\s+/g, '-')
+  .toLowerCase();
+
+/* ✅ Unified base classes - identical sizing for all variants */
+const baseButtonClasses = `
+  inline-flex items-center justify-center
+  px-8 py-4 md:px-10 md:py-5
+  text-base md:text-lg
+  rounded-xl font-semibold
+  text-center
+  transition-all duration-200 ease-out
+  min-h-[48px] md:min-h-[56px]
+`;
+
+// Extract width classes from className to apply to wrapper
+const hasFullWidth = className.includes('w-full');
+const wrapperClasses = hasFullWidth ? 'relative w-full' : 'relative inline-block';
+---
+<div class={wrapperClasses}>
+  {variant === 'book-now' ? (
+    <>
+      <button
+        id={idBase}
+        aria-haspopup="true"
+        aria-expanded="false"
+        class={`
+          ${baseButtonClasses}
+          bg-[#E50914] text-white
+          hover:bg-[#c40812]
+          active:scale-[0.97]
+          ${className}
+        `}
+      >
+        {buttonText}
+      </button>
+
+      <!-- Dropdown -->
+      <div
+        id={`${idBase}-dropdown`}
+        class="hidden absolute top-full left-0 mt-3 w-full max-w-[280px]
+          bg-[#0f0f0f] border border-white/20 rounded-xl shadow-2xl
+          z-50 overflow-hidden origin-top scale-95 opacity-0
+          transition-all duration-200"
+        role="menu"
+      >
+        <a
+          href={getWhatsAppUrl(
+            `Hello ${COMPANY_NAME}! I'm interested in ${serviceType || planType || 'your services'}.`
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          role="menuitem"
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center relative"
+        >
+          <span class="absolute top-1 right-2 text-xs bg-[#25D366] px-2 py-0.5 rounded">Recommended</span>
+          📱 WhatsApp
+          <span class="block text-xs text-gray-400 mt-1">Instant response</span>
+        </a>
+
+        <a
+          href={getEmailUrl(
+            `Inquiry: ${serviceType || planType || 'General Inquiry'}`,
+            `Hello ${COMPANY_NAME},\n\nI'm interested in ${serviceType || planType || 'your services'}.\n\nThank you.`
+          )}
+          role="menuitem"
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center"
+        >
+          📧 Email
+        </a>
+
+        <a
+          href="/contact"
+          role="menuitem"
+          class="block px-6 py-4 text-white hover:bg-[#E50914] transition text-center"
+        >
+          📝 Fill Form
+        </a>
+      </div>
+    </>
+  ) : (
+    <a
+      href="/contact"
+      class={`
+        ${baseButtonClasses}
+        border-2 border-white
+        bg-transparent text-white
+        hover:bg-white hover:text-[#E50914]
+        ${className}
+      `}
+    >
+      {buttonText}
+    </a>
+  )}
+</div>
+
+{variant === 'book-now' && (
+  <script define:vars={{ idBase }}>
+    (() => {
+      const button = document.getElementById(idBase);
+      const dropdown = document.getElementById(idBase + '-dropdown');
+
+      if (!button || !dropdown) return;
+
+      const open = () => {
+        dropdown.classList.remove('hidden', 'scale-95', 'opacity-0');
+        button.setAttribute('aria-expanded', 'true');
+      };
+
+      const close = () => {
+        dropdown.classList.add('scale-95', 'opacity-0');
+        button.setAttribute('aria-expanded', 'false');
+        setTimeout(() => dropdown.classList.add('hidden'), 150);
+      };
+
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.contains('hidden') ? open() : close();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+          close();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+)}
