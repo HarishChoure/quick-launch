@@ -2,7 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
+import Industries from '../components/Industries.astro';
+import Process from '../components/Process.astro';
 import Footer from '../components/Footer.astro';
+import CTAButton from '../components/CTAButton.astro';
 ---
 
 <Layout 
@@ -11,6 +14,68 @@ import Footer from '../components/Footer.astro';
 >
     <Navigation />
     <Hero />
+    
+    <!-- Quick Launch Card -->
+    <section class="py-20 px-4 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-center">
+          <article class="p-8 bg-dark-custom border-2 border-white rounded-3xl relative max-w-md w-full">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#E50914] text-white px-6 py-2 rounded-full text-xs font-black">
+              ⚡ 24 HOURS
+            </div>
+            
+            <div class="text-center mb-6 pt-4">
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Quick Launch</h2>
+              <p class="text-gray-400 text-sm">Perfect for rapid deployment</p>
+            </div>
+            
+            <div class="text-center mb-6">
+              <div class="text-4xl md:text-5xl font-black text-white mb-2">₹8,300</div>
+              <p class="text-gray-400 text-sm">one-time payment</p>
+            </div>
+            
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">Industry-specific design</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">SEO optimization</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">12 content updates/year</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">Monthly reports</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">SSL certificate</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">Lifetime hosting</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white text-lg">✓</span>
+                <span class="text-gray-300">Free subdomain</span>
+              </li>
+            </ul>
+            
+            <div class="space-y-3">
+              <CTAButton variant="book-now" planType="Quick Launch (24 Hours)" serviceType="Quick Launch" className="w-full" />
+              <CTAButton variant="contact-us" text="Contact Us" className="w-full" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <Industries />
+    <Process />
     <Footer />
 </Layout>
 

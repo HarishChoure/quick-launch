@@ -1,5 +1,5 @@
 ---
-// Contact section component
+import { PHONE_NUMBER, EMAIL_ADDRESS } from '../constants/contact';
 ---
 
 <!-- Contact Section -->
@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <label class="block mb-3 font-semibold text-lg">Phone Number</label>
-                    <input type="tel" placeholder="+91 98765 43210" class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
+                    <input type="tel" placeholder={PHONE_NUMBER} class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition">
                 </div>
                 <div>
                     <label class="block mb-3 font-semibold text-lg">Project Type *</label>
@@ -64,12 +64,12 @@
             <div>
                 <div class="text-4xl mb-3">📧</div>
                 <h4 class="font-bold mb-2">Email Us</h4>
-                <p class="text-gray-300">hello@Quick Launch.com</p>
+                <p class="text-gray-300">{EMAIL_ADDRESS}</p>
             </div>
             <div>
                 <div class="text-4xl mb-3">📱</div>
                 <h4 class="font-bold mb-2">Call/WhatsApp</h4>
-                <p class="text-gray-300">+91 98765 43210</p>
+                <p class="text-gray-300">{PHONE_NUMBER}</p>
             </div>
             <div>
                 <div class="text-4xl mb-3">🌍</div>

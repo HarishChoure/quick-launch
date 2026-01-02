@@ -1,5 +1,5 @@
 ---
-import { EMAIL_ADDRESS, getEmailUrl, getWhatsAppUrl } from '../constants/contact';
+import { EMAIL_ADDRESS, PHONE_NUMBER, getEmailUrl, getWhatsAppUrl } from '../constants/contact';
 
 interface Props {
   serviceType?: string;
@@ -51,14 +51,14 @@ const serviceValue = prefilledService || serviceType || '';
       type="tel" 
       id="formPhone"
       name="phone"
-      placeholder="+91 98765 43210" 
+      placeholder={PHONE_NUMBER} 
       class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
     >
   </div>
   
   {showServiceField && (
     <div>
-      <label for="formService" class="block mb-3 font-semibold text-lg text-white">Service Required *</label>
+      <label for="formService" class="block mb-3 font-semibold text-lg text-white">Project Type *</label>
       <select 
         id="formService"
         name="service"
@@ -90,7 +90,7 @@ const serviceValue = prefilledService || serviceType || '';
   )}
   
   <div>
-    <label for="formMessage" class="block mb-3 font-semibold text-lg text-white">Message *</label>
+    <label for="formMessage" class="block mb-3 font-semibold text-lg text-white">Project Details *</label>
     <textarea 
       id="formMessage"
       name="message"
@@ -99,6 +99,22 @@ const serviceValue = prefilledService || serviceType || '';
       required
       class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition resize-none"
     ></textarea>
+  </div>
+  
+  <div>
+    <label for="formBudget" class="block mb-3 font-semibold text-lg text-white">Budget Range</label>
+    <select 
+      id="formBudget"
+      name="budget"
+      class="w-full px-6 py-4 rounded-xl border-2 border-custom bg-dark-custom text-white focus:outline-none focus:ring-4 focus:ring-white/50 focus:border-white transition"
+    >
+      <option value="">Select budget range</option>
+      <option value="under-50k">Under ₹50,000</option>
+      <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+      <option value="1l-3l">₹1,00,000 - ₹3,00,000</option>
+      <option value="3l-5l">₹3,00,000 - ₹5,00,000</option>
+      <option value="above-5l">Above ₹5,00,000</option>
+    </select>
   </div>
   
   <button 
@@ -122,9 +138,10 @@ const serviceValue = prefilledService || serviceType || '';
     const phone = formData.get('phone') as string;
     const service = formData.get('service') as string;
     const message = formData.get('message') as string;
+    const budget = formData.get('budget') as string;
     
     // Build email body
-    const emailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nService: ${service || 'Not specified'}\n\nMessage:\n${message}`;
+    const emailBody = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nProject Type: ${service || 'Not specified'}\nBudget Range: ${budget || 'Not specified'}\n\nProject Details:\n${message}`;
     const emailSubject = `New Inquiry: ${service || 'General Inquiry'}`;
     
     // Use the email address from constants

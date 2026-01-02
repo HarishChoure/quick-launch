@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import CTAButton from '../components/CTAButton.astro';
+import Process from '../components/Process.astro';
 ---
 
 <Layout 
@@ -37,7 +38,7 @@ import CTAButton from '../components/CTAButton.astro';
             <li>• SEO optimization</li>
             <li>• Performance tuning</li>
           </ul>
-          <div class="flex gap-3">
+          <div class="flex gap-3 items-stretch">
             <CTAButton variant="book-now" serviceType="Web Development" className="flex-1" />
             <CTAButton variant="contact-us" text="Learn More" className="flex-1" />
           </div>
@@ -140,6 +141,8 @@ import CTAButton from '../components/CTAButton.astro';
       </div>
     </div>
   </section>
+  
+  <Process />
   
   <Footer />
 </Layout>

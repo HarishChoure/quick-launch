@@ -3,11 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
+import FAQ from '../components/FAQ.astro';
 import { PHONE_NUMBER, WHATSAPP_NUMBER, EMAIL_ADDRESS, getWhatsAppUrl, getEmailUrl, getPhoneUrl } from '../constants/contact';
-
-// Get service from URL query params if present
-const url = Astro.url;
-const serviceParam = url.searchParams.get('service') || '';
 ---
 
 <Layout 
@@ -25,32 +22,10 @@ const serviceParam = url.searchParams.get('service') || '';
       </div>
 
       <div class="card bg-dark-custom border border-custom rounded-3xl p-10 shadow-2xl mb-16">
-        <ContactForm prefilledService={serviceParam} />
+        <ContactForm />
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
-          <div class="text-4xl mb-3">📱</div>
-          <h3 class="font-bold mb-2 text-white">WhatsApp</h3>
-          <a 
-            href={getWhatsAppUrl()} 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-300 hover:text-[#E50914] transition block"
-          >
-            {WHATSAPP_NUMBER}
-          </a>
-        </div>
-        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
-          <div class="text-4xl mb-3">📞</div>
-          <h3 class="font-bold mb-2 text-white">Call Us</h3>
-          <a 
-            href={getPhoneUrl()} 
-            class="text-gray-300 hover:text-[#E50914] transition block"
-          >
-            {PHONE_NUMBER}
-          </a>
-        </div>
+      <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
         <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
           <div class="text-4xl mb-3">📧</div>
           <h3 class="font-bold mb-2 text-white">Email Us</h3>
@@ -62,6 +37,18 @@ const serviceParam = url.searchParams.get('service') || '';
           </a>
         </div>
         <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
+          <div class="text-4xl mb-3">📱</div>
+          <h3 class="font-bold mb-2 text-white">Call/WhatsApp</h3>
+          <a 
+            href={getWhatsAppUrl()} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-300 hover:text-[#E50914] transition block"
+          >
+            {WHATSAPP_NUMBER}
+          </a>
+        </div>
+        <div class="p-6 bg-dark-custom border border-custom rounded-xl hover:border-white transition">
           <div class="text-4xl mb-3">🌍</div>
           <h3 class="font-bold mb-2 text-white">Location</h3>
           <p class="text-gray-300">India • Remote Friendly</p>
@@ -69,6 +56,8 @@ const serviceParam = url.searchParams.get('service') || '';
       </div>
     </div>
   </section>
+  
+  <FAQ />
   
   <Footer />
 </Layout>
